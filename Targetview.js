@@ -86,6 +86,8 @@ class Targetview extends React.Component {
                                 borderColor: "white",
                                 borderRadius: 100,
                                 padding: 8,
+                                paddingLeft: 12,
+                                paddingRight: 12,
                                 backgroundColor: "transparent"
                             }}
                             onPress={async () => {
@@ -94,15 +96,6 @@ class Targetview extends React.Component {
                                     "Confirm kill",
                                     "Choose image source:",
                                     [
-                                        {
-                                            text: "Library",
-                                            onPress: async () => {
-                                                result = await Expo.ImagePicker.launchImageLibraryAsync(
-                                                    { quality: 1 }
-                                                );
-                                                this.props.upload(result);
-                                            }
-                                        },
                                         {
                                             text: "Camera",
                                             onPress: async () => {
@@ -123,9 +116,22 @@ class Targetview extends React.Component {
                                                 );
                                                 this.props.upload(result);
                                             }
-                                        }
+                                        },
+                                        {
+                                            text: "Photo roll",
+                                            onPress: async () => {
+                                                result = await Expo.ImagePicker.launchImageLibraryAsync(
+                                                    { quality: 1 }
+                                                );
+                                                this.props.upload(result);
+                                            }
+                                        },
+                                        {
+                                            text: 'Cancel',
+                                            style: 'cancel',
+                                        },
                                     ],
-                                    { cancelable: true }
+                                    {   cancelable: true }
                                 );
                             }}
                         >

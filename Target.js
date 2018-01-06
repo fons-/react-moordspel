@@ -1,5 +1,11 @@
 import React from "react";
-import { Animated, Text, View, TouchableOpacity } from "react-native";
+import {
+    Animated,
+    Text,
+    View,
+    TouchableOpacity,
+    StatusBar,
+} from "react-native";
 import { MapView } from "expo";
 import { StackNavigator } from "react-navigation";
 
@@ -7,7 +13,6 @@ import Mapcontainer from "./Mapcontainer";
 import Targetview from "./Targetview";
 
 export default class Target extends React.Component {
-
     state = {
         offsetDist: 381,
         mapOffset: new Animated.Value(0),
@@ -30,6 +35,7 @@ export default class Target extends React.Component {
                     flex: 1
                 }}
             >
+                
                 <TouchableOpacity
                     style={{
                         zIndex: 6
@@ -47,7 +53,7 @@ export default class Target extends React.Component {
                     }}
                 >
                     <Targetview
-						navigation={this.props.navigation}
+                        navigation={this.props.navigation}
                         offset={this.state.mapOffset}
                         targetPicaUrl={this.state.targetPicaUrl}
                         name={this.state.targetName}

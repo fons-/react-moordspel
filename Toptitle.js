@@ -7,6 +7,7 @@ import {
     Text,
     Image,
 	ScrollView,
+	StatusBar,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationActions } from 'react-navigation';
@@ -15,6 +16,7 @@ export default class Toptitle extends React.Component {
 	render() {
 		return (
 		<View>
+			<StatusBar backgroundColor="#fff" barStyle="dark-content" />
 		<View style={{
 			//position: 'absolute',
 			marginTop: 30,
